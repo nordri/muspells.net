@@ -1,36 +1,88 @@
-*{margin:0px;padding:0px;}
-body{background:#222;font-family:Verdana, Arial, sans-serif;font-size:16px;color:#fff;}
-a img{border:0px;}
-a{text-decoration:none;}
-input{background:#333;font-family:Verdana;font-size:0.7em;padding:3px;color:#f4f4f4;border:2px solid #555;}
-button{background:#222;font-family:Verdana;font-size:0.7em;padding:2px;color:#f4f4f4;border:2px solid #444;height:2em;}
-.hidden{text-indent:-9000px;}
-.br{clear:both;}
-.orange{color:orange;display:inline;}
-.small{font-size:x-small;}
-.large{font-size:xx-large;}
-.right{float:right;}
-.left{float:left;}
-.center{margin:0 auto;text-align:center;}
-#main{width:700px;margin:5px auto;}
-#logo{float:left;}
-#logo h1{margin-top:30px;margin-left:10px;font-size:1.6em;letter-spacing:-0.1em;}
-#search{margin-top:30px;float:right;}
-#search button{margin-left:5px;padding:0 2px 2px 2px;}
-#menu{float:left;width:130px;margin-top:30px;margin-left:5px;}
-#menu ul, #contact ul{list-style:none;}
-#menu li a{display:block;height:25px;width:100px;padding:9px;margin:5px;background:inherit;border-right:4px solid #444;color:#999;font-size:0.9em;}
-#menu li a:hover{color:#f4f4f4;background:#333;border-right:4px solid orange;}
-#menu li .active{color:#999;background:#333;border-right:4px solid #444;}
-#maintext{float:right;width:550px;margin-top:30px;margin-left:2px;}
-#maintext a{color:orange;font-weight:bold;}
-#maintext a:hover{color:#fff;background:orange;font-weight:bold;}
-#contact{background:#3C3C3C none repeat scroll 0 0;padding:10px;}
-#maintext p{line-height:1.4em;font-size:0.7em;margin-bottom:10px;color:#f4f4f4;background:#3C3C3C none repeat scroll 0 0;padding:10px;}
-#maintext h3{text-indent:20px;letter-spacing:-0.1em;margin-bottom:4px;}
-#maintext h3:hover{color:#fff;}
-#maintext .code{color:#444;background:#F4f4f4 url(codenums.png) repeat-y;border:1px solid #ccc;padding:1px;padding-left:25px;font-family:"courier new", helvetica, "times new roman", monospace;font-size:0.8em;width:470px;margin:2px auto;white-space:nowrap;overflow:auto;}
-#maintext code{color:#fff;font-family:"courier new", helvetica, "times new roman", monospace;background-color:#333;font-size:1.2em;}
-#maintext blockquote{color:#999;font-style:italic;text-align:center;width:300px;margin:10px auto;}
-#footer{width:729px;clear:both;letter-spacing:0.3em;}
-.powered{border:1px solid #999999;margin:0 auto 1em;text-align:center;width:410px;}
+* {
+    box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+.header {
+  grid-area: header;
+  background-color: #61210B;
+  padding: 30px;
+  text-align: left;
+  font-size: 35px;
+  color: white;
+}
+
+/* Style the topnav links */
+.topnav a {
+    float: left;
+    display: block;
+    color: white;
+    background-color: #61210B;
+    font-size: 15px;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+    background-color: #F5BCA9;
+    color: black;
+}
+
+/* The grid container */
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+  'header header header header header' 
+  'left middle middle middle middle' 
+  'footer footer footer footer footer';
+  grid-column-gap: 10px;
+  align-content: center;
+  width: 800px;
+  float: left;
+} 
+
+.left,
+.middle {
+  padding: 10px;
+  
+}
+
+/* Style the left column */
+.left {
+  grid-area: left;
+  background-color: #F5BCA9;
+  float: left;
+}
+
+/* Style the middle column */
+.middle {
+  grid-area: middle;
+  background-color: #F5BCA9;
+  float: right;
+}
+
+/* Style the footer */
+.footer {
+  grid-area: footer;
+  background-color: #61210B;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .grid-container  {
+    grid-template-areas: 
+    'header header header header header header' 
+    'left left left left left left' 
+    'middle middle middle middle middle middle' 
+    'right right right right right right' 
+    'footer footer footer footer footer footer';
+}
